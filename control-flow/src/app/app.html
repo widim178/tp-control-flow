@@ -1,0 +1,40 @@
+<div>@if (usuarioLogueado) {
+    <p>!Bienvenido¡</p>
+    <button (click)="click()">click aqui</button>
+} @else {
+    <p>!Inicia sesion¡</p>
+    <button (click)="click()">click aqui</button>
+}</div>
+
+<div>@for (p of productosFiltrados; track p.id; let i = $index)  {
+    <p>{{i + 1}}- {{p.nombre}}: ${{p.precio}}.</p>
+} @empty {
+    <p>No hay productos.</p>
+}</div>
+
+<div>@if (productos.length > 0) {
+    <button (click)="vaciarLista()">vaciar lista</button>
+}
+</div>
+
+<div><input [(ngModel)]="filtro" placeholder="buscar producto..."></div>
+
+<div><select [(ngModel)]="categoria">
+    <option value="electronica">Electronica</option>
+    <option value="ropa">Ropa</option>
+    <option value="comida">Comida</option>
+    <option value="otro">Otro</option>
+</select></div>
+
+<p>
+    Categoria:
+    @switch (categoria) {
+        @case ('electronica') {}
+        @case ('ropa') {}
+        @case ('comida') {}
+        @default {caja}
+    }
+</p>
+
+
+
