@@ -1,0 +1,22 @@
+<div>
+
+    <img [src]="pokemon.imagen" class="crad-img-top mx-auto" [alt]="pokemon.nombre" > 
+    
+    <div class="card-body">
+        <h5 class="card-title">#{{ pokemon.id }} {{ pokemon.nombre}}</h5>
+
+        @for (tipo of pokemon.tipos; track tipo){
+            <span class="badge bg-secondary me-1">{{ tipo }}</span>
+
+        }
+
+        <p class="card-text mt-2 mb-2">
+          Altura: {{ pokemon.altura }} peso: {{pokemon.peso}}
+        </p>
+
+        <button class="btn btn-outline-warning btn-sm" (click)="onFavorito()">
+          Favorito
+        </button>
+
+    </div>
+</div>
